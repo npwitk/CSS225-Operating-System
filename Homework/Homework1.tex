@@ -1,0 +1,191 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\pagenumbering{gobble}
+\usepackage{enumitem}
+\usepackage{ulem}
+\setlength{\parindent}{0pt}
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily,
+    mathescape
+}
+\title{\textbf{CSS225: Operating System \\ Homework}}
+
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{4cm}
+\begin{center}
+\Huge{\text{Homework 1: Introduction to OS}}
+\end{center}
+
+\vspace{5cm}
+\begin{center}
+  \large\textbf{Nonprawich Intakaew} \\[0.2cm]
+    \large Student ID: 6622772422 \\[0.2cm]
+    \large Section 4
+\end{center}
+\newpage
+\section*{Part 1: Multiple-Choice Questions}
+
+\textbf{1. What is/are true about the operating system?}
+\begin{enumerate}[label=\alph*)]
+    \item It is a software program.
+    \item It works as the resource manager in the computer system.
+    \item It provides services to application programs.
+    \item All of them
+\end{enumerate} \vspace{15pt}
+\noindent \textbf{2. What is a role of the operating system as the interface between the application programs and
+hardware?}
+\begin{enumerate}[label=\alph*)]
+    \item The operating system reads the input from the keyboard and forward it to a user program.
+    \item The operating system determines which application program will be executed by the processor.
+    \item The operating system loads a set of instructions (i.e., a process) into the main memory.
+    \item No correct answer
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{3. Which one is not an abstraction provided in the operating system?}
+\begin{enumerate}[label=\alph*)]
+    \item Files
+    \item Processes
+    \item Main memory
+    \item Threads
+\end{enumerate} \vspace{15pt}
+\newpage
+\noindent \textbf{4. From the von Neumann model, which one is a CPU state?}
+\begin{enumerate}[label=\alph*)]
+    \item Execution state
+    \item Waiting state
+    \item Ready state
+    \item Running
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{5. Which technique is used when we have a large data transferred from an I/O device?}
+\begin{enumerate}[label=\alph*)]
+    \item Direct memory access
+    \item Interrupt
+    \item Memory allocation
+    \item No correct answer
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{6. Who can run a process in the kernel mode?}
+\begin{enumerate}[label=\alph*)]
+    \item A user program
+\item The operating system
+\item An application program
+\item No correct answer
+\end{enumerate} \vspace{15pt}
+\noindent \textbf{7. Which one is a technique to increase the CPU utilization?}
+\begin{enumerate}[label=\alph*)]
+    \item Trap
+    \item Context switching
+    \item Mutex lock
+    \item Interrupt
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{8. Which of the following instructions should be privileged?}
+\begin{enumerate}[label=\alph*)]
+    \item Set the timer value
+    \item Read the clock
+    \item Show which programs are running
+    \item No correct answer
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{9. Which storage device is nonvolatile?}
+\begin{enumerate}[label=\alph*)]
+    \item Register
+    \item Cache
+    \item EEPROM
+    \item Main memory
+\end{enumerate} \vspace{15pt}
+\noindent \textbf{10. Consider a computer system with only one CPU. Which one is \underline{NOT} true?}
+\begin{enumerate}[label=\alph*)]
+    \item This computer system can run several processes.
+    \item This computer system can run several threads.
+    \item This computer system can run in the concurrency mode.
+    \item No correct answer
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{11. Which term is \underline{NOT} related to the event when a user process makes a system call?}
+\begin{enumerate}[label=\alph*)]
+\item Trap
+\item Privileged job
+\item Interrupt
+\item Kernel mode
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{12. The operating system can load additional system programs later when it needs. What is the name of this operating system’s structure?}
+\begin{enumerate}[label=\alph*)]
+\item Monolithic structure
+\item Module structure
+\item Layered structure
+\item Microkernel structure
+\end{enumerate} \vspace{15pt}
+\noindent \textbf{13. What is a main disadvantage of the microkernel approach to system design?}
+\begin{enumerate}[label=\alph*)]
+    \item The operation of the operating system might be a little bit slow because the kernel and the service programs are stored in different spaces.
+    \item The size of the kernel is quite large since all of services are in the kernel mode.
+    \item Adding a new service does not require modifying the kernel.
+    \item No correct answer
+\end{enumerate} \vspace{15pt}
+
+\noindent \textbf{14. Among these structure, which structure of the operating system has the largest kernel?}
+\begin{enumerate}[label=\alph*)]
+\item Monolithic structure
+\item Module structure
+\item Layered structure
+\item Microkernel structure
+\end{enumerate} \vspace{15pt}
+\newpage
+\noindent \textbf{15. Which one loads the operating system into the main memory?}
+\begin{enumerate}[label=\alph*)]
+\item Dispatcher
+\item Device driver
+\item Bootstrap program
+\item No correct answer
+\end{enumerate} \vspace{15pt}
+\newpage
+\section*{Part 2: Short-Answer Questions}
+\noindent \textbf{1. Which of the following instructions should be privileged?}
+\begin{enumerate}[label=\alph*)]
+    \item Set value of timer
+    \item Read the clock
+    \item Clear memory
+    \item Turn off interrupts
+    \item Modify entries in device-status table
+    \item Show which programs are running
+\end{enumerate} 
+
+\textcolor{red}{a (Set value of timer), c (Clear memory), d (Turn off interrupts), e (Modify entries in device-status table)}
+
+
+\vspace{90pt}
+
+
+\noindent \textbf{2. Whenever a computer system must interact with an I/O device, briefly explain how we can utilize the CPU efficiently.} \\
+
+\textcolor{red}{We can utilize the CPU efficiently during interactions with I/O devices by employing techniques such as Direct Memory Access (DMA) and interrupts. DMA allows the device controller to handle data transfers directly between the I/O device and memory, bypassing the CPU. This reduces the CPU's workload and enables it to focus on other tasks. Additionally, interrupts improve CPU utilization by signaling the CPU only when the I/O device has completed its task. This approach allows the CPU to work on other processes instead of waiting idly. By combining DMA and interrupts, we can optimize the CPU's efficiency when managing interactions with I/O devices.}
+\newpage
+
+\noindent \textbf{3. In a computer with one CPU, why could a user experience that multiple programs are running simultaneously? Also, specify the terms related.} \\
+
+\textcolor{red}{A single CPU can give the illusion of running multiple programs simultaneously through techniques such as multiprogramming and multitasking. In multiprogramming, the operating system (OS) loads multiple processes into memory and switches to another process when the current one is waiting for resources, resuming it later using an interrupt. In multitasking, the OS rapidly switches between processes, allocating each a short time slice, creating the perception of parallel execution. If the CPU has multiple cores, it can achieve parallelism by executing instructions concurrently.}
+\newpage
+
+\noindent \textbf{4. What is the main advantage of the microkernel approach to system design? What are the disadvantages of using the microkernel approach?} \\
+
+\textcolor{red}{The microkernel approach removes all nonessential components from the kernel and implements them as user-level programs in separate address spaces. The main advantage of this design is that it simplifies extending the operating system, as new services can be added without modifying the kernel. Additionally, it enhances security and reliability because most services run in user space rather than kernel space. However, the microkernel approach can suffer from performance issues due to increased overhead from system calls and inter-process communication. The separation of the kernel and user-space services also leads to slower OS operations.}
+\newpage
+
+\noindent \textbf{5. What are the advantages of using loadable kernel modules?} \\ 
+
+\textcolor{red}{Loadable kernel modules are loaded into the OS kernel only when needed and can be removed when no longer necessary. This design makes the OS more flexible, as it allows new features to be added directly to the kernel without requiring a system reboot or recompilatio}
+
+
+\newpage
+\end{document}
